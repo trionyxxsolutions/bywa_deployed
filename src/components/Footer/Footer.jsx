@@ -39,7 +39,7 @@ export default function Footer() {
             <li><span>Bally Ghat, Howrah</span></li>
             <li><span>West Bengal, India</span></li>
             <li><a href="mailto:contact@bengalyoga.org">contact@bengalyoga.org</a></li>
-            <li><span>+91 XXXXX XXXXX</span></li>
+            <li><span>+91 90518 23554</span></li>
           </ul>
         </div>
       </div>
