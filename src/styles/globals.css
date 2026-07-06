@@ -100,3 +100,51 @@ body {
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
+
+/* Responsive Typography */
+@media (max-width: 1024px) {
+  .section-title { font-size: 2.8rem; }
+}
+
+@media (max-width: 768px) {
+  .section-label { font-size: 0.65rem; }
+  .section-title { font-size: 2.4rem; }
+}
+
+@media (max-width: 480px) {
+  .section-label { font-size: 0.62rem; }
+  .section-label::before { width: 1.5rem; }
+  .section-title { font-size: 2rem; }
+}
+
+@media (max-width: 360px) {
+  .section-label { font-size: 0.6rem; }
+  .section-title { font-size: 1.8rem; }
+}
+
+/* Responsive Buttons */
+@media (max-width: 768px) {
+  .btn-primary {
+    padding: 0.85rem 1.8rem;
+    font-size: 0.76rem;
+  }
+  .btn-ghost {
+    padding: 0.85rem 1.8rem;
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-primary {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.74rem;
+    width: 100%;
+    text-align: center;
+  }
+  .btn-ghost {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.74rem;
+    width: 100%;
+    text-align: center;
+  }
+}

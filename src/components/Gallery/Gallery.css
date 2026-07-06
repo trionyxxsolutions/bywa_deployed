@@ -111,15 +111,99 @@
 }
 .gallery__upload-btn:hover { border-color: var(--clay); color: var(--clay); }
 
-@media (max-width: 900px) {
-  .gallery { padding: 5rem 1.5rem; }
+/* ── RESPONSIVE: Tablet Landscape ── */
+@media (max-width: 1200px) {
+  .gallery { padding: 5rem 4rem; }
+  .gallery__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 220px);
+  }
+  .gallery__card--span { grid-row: span 1; }
+  .gallery__card--2 { grid-column: span 2; }
+}
+
+/* ── RESPONSIVE: Tablet Portrait ── */
+@media (max-width: 1024px) {
+  .gallery { padding: 4.5rem 2.5rem; }
+  .gallery__header { margin-bottom: 2.5rem; }
   .gallery__grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 200px);
   }
-  .gallery__card--span { grid-row: span 1; }
+  .gallery__card--2 { grid-column: span 1; }
+  .gallery__actions { margin-top: 2rem; }
 }
 
-@media (max-width: 540px) {
-  .gallery__grid { grid-template-columns: 1fr; grid-template-rows: repeat(5, 180px); }
+/* ── RESPONSIVE: Large Mobile ── */
+@media (max-width: 768px) {
+  .gallery {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .gallery__header { margin-bottom: 2rem; }
+
+  .gallery__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 180px);
+    gap: 0.75rem;
+  }
+
+  .gallery__card--span { grid-row: span 1; }
+  .gallery__card--2 { grid-column: span 1; }
+
+  .gallery__card {
+    padding: 1rem;
+  }
+
+  .gallery__card-label {
+    font-size: 0.6rem;
+  }
+
+  .gallery__actions {
+    margin-top: 1.75rem;
+    text-align: center;
+  }
+
+  .gallery__upload-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* ── RESPONSIVE: Small Mobile ── */
+@media (max-width: 480px) {
+  .gallery {
+    padding: 3rem 1.25rem;
+  }
+
+  .gallery__header { margin-bottom: 1.75rem; }
+
+  .gallery__grid {
+    grid-template-rows: repeat(5, 160px);
+    gap: 0.625rem;
+  }
+
+  .gallery__card {
+    padding: 0.875rem;
+  }
+
+  .gallery__card-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+  }
+
+  .gallery__actions { margin-top: 1.5rem; }
+
+  .gallery__upload-btn {
+    font-size: 0.7rem;
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+/* ── RESPONSIVE: Extra Small ── */
+@media (max-width: 360px) {
+  .gallery { padding: 2.5rem 1rem; }
+  .gallery__grid { grid-template-rows: repeat(5, 140px); }
+  .gallery__card { padding: 0.75rem; }
 }
