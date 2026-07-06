@@ -1,0 +1,97 @@
+.contact {
+  background: var(--sand);
+  padding: 7rem 6rem;
+}
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.contact__detail {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(196, 149, 106, 0.2);
+}
+.contact__detail:first-of-type { margin-top: 2rem; }
+
+.contact__detail-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 0.4rem;
+}
+
+.contact__detail-val {
+  font-size: 0.9rem;
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+/* FORM */
+.contact__form { padding-top: 0.5rem; }
+
+.contact__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact__field label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+}
+
+.contact__field input,
+.contact__field textarea {
+  padding: 0.85rem 1rem;
+  background: var(--white);
+  border: 1px solid rgba(196, 149, 106, 0.3);
+  border-radius: 2px;
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  transition: border-color 0.2s;
+  outline: none;
+  width: 100%;
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus { border-color: var(--clay); }
+
+.contact__field textarea { resize: vertical; min-height: 140px; }
+
+.contact__submit {
+  padding: 0.9rem 2.5rem;
+  background: var(--clay);
+  color: var(--white);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+.contact__submit:hover { background: var(--clay-deep); }
+.contact__submit--sent { background: var(--sage) !important; cursor: default; }
+
+@media (max-width: 900px) {
+  .contact { padding: 5rem 1.5rem; }
+  .contact__inner { grid-template-columns: 1fr; gap: 3rem; }
+  .contact__form-row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,35 @@
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+@media print {
+  /* Hide everything on the page by default */
+  body > * { display: none !important; }
+
+  /* Then show only the admin root and walk down to content */
+  body > #root   { display: block !important; }
+  .admin-root    { display: block !important; }
+  .admin-main    { display: block !important; margin: 0 !important; width: 100% !important; }
+  .admin-content { display: block !important; padding: 0 !important; overflow: visible !important; }
+
+  /* Hide every direct child of admin-root that isn't admin-main (= sidebar) */
+  .admin-root > *:not(.admin-main) { display: none !important; }
+
+  /* Hide every direct child of admin-main that isn't admin-content (= topbar) */
+  .admin-main > *:not(.admin-content) { display: none !important; }
+}
+.admin-content {
+  flex: 1;
+  padding: 2rem 2.25rem;
+  overflow-y: auto;
+}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  .admin-content {
+    padding: 1rem;
+  }
+}

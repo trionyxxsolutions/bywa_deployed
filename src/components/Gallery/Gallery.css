@@ -1,0 +1,125 @@
+.gallery {
+  background: var(--ink);
+  padding: 7rem 6rem;
+}
+
+.gallery__header { margin-bottom: 3rem; }
+.gallery__label { color: var(--clay) !important; }
+.gallery__label::before { background: var(--clay) !important; }
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 260px 260px;
+  gap: 1rem;
+}
+
+.gallery__card {
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+  perspective: 800px;
+}
+
+/* Hover is now a pure visual accent (scale/brightness), completely
+   independent from the flip/shuffle cycle below — it can't be mistaken
+   for a shuffle trigger, and it never pauses or affects the interval
+   running in Gallery.jsx. */
+.gallery__card:hover .gallery__media {
+  transform: scale(1.04);
+  filter: brightness(1.05);
+}
+
+.gallery__card--span { grid-row: span 2; }
+
+.gallery__card--0 { background: #3D4A3A; }
+.gallery__card--1 { background: #4A3D35; }
+.gallery__card--2 { background: #3A3D4A; }
+.gallery__card--3 { background: #4A3A3D; }
+.gallery__card--4 { background: #3D4A42; }
+.gallery__card--uploaded { background: #2e2e2e; }
+
+.gallery__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease, opacity 0.5s ease, transform 0.5s ease;
+  backface-visibility: hidden;
+}
+
+/* This is the only thing that drives the visible shuffle — triggered
+   purely by the JS interval in Gallery.jsx, never by :hover. */
+.gallery__media{
+    transition:
+        opacity .45s ease,
+        transform .45s ease;
+}
+
+.gallery__card--flipping .gallery__media{
+    opacity:0;
+    transform:rotateY(90deg);
+}
+
+.gallery__play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.gallery__card-label {
+  position: relative;
+  z-index: 2;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.gallery__actions { margin-top: 2.5rem; }
+
+.gallery__upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+}
+.gallery__upload-btn:hover { border-color: var(--clay); color: var(--clay); }
+
+@media (max-width: 900px) {
+  .gallery { padding: 5rem 1.5rem; }
+  .gallery__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 200px);
+  }
+  .gallery__card--span { grid-row: span 1; }
+}
+
+@media (max-width: 540px) {
+  .gallery__grid { grid-template-columns: 1fr; grid-template-rows: repeat(5, 180px); }
+}

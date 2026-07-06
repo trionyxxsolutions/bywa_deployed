@@ -1,0 +1,171 @@
+/* ── ADMIN DESIGN TOKENS ── */
+:root {
+  /* Neutrals */
+  --a-bg:        #F7F5F2;
+  --a-surface:   #FFFFFF;
+  --a-surface-2: #F2EFE9;
+  --a-border:    rgba(196,149,106,0.18);
+  --a-border-strong: rgba(196,149,106,0.35);
+
+  /* Brand (same as site) */
+  --a-clay:      #C4956A;
+  --a-clay-deep: #9B6A3F;
+  --a-sage:      #7A8C74;
+  --a-ink:       #2A2420;
+  --a-ink-mid:   #5C4F47;
+  --a-ink-light: #9A8F87;
+  --a-white:     #FDFAF6;
+  --a-accent:    #D4522A;
+  --a-green:     #5A8A6A;
+  --a-blue:      #4A6A8A;
+
+  /* Sidebar */
+  --a-sidebar-w: 240px;
+  --a-topbar-h:  64px;
+}
+
+/* ── ADMIN RESET ── */
+.admin-root * { box-sizing: border-box; margin: 0; padding: 0; }
+
+.admin-root {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--a-bg);
+  color: var(--a-ink);
+  min-height: 100vh;
+  display: flex;
+}
+
+/* ── SHARED ADMIN TYPOGRAPHY ── */
+.admin-root .a-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--a-ink-light);
+  font-weight: 500;
+}
+
+.admin-root .a-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--a-ink);
+  line-height: 1.2;
+}
+
+/* ── ADMIN BUTTONS ── */
+.admin-root .a-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.18s;
+  border: none;
+}
+
+.admin-root .a-btn-primary {
+  background: var(--a-clay);
+  color: white;
+}
+.admin-root .a-btn-primary:hover { background: var(--a-clay-deep); }
+
+.admin-root .a-btn-ghost {
+  background: transparent;
+  color: var(--a-ink-mid);
+  border: 1px solid var(--a-border-strong);
+}
+.admin-root .a-btn-ghost:hover { border-color: var(--a-clay); color: var(--a-clay); }
+
+.admin-root .a-btn-danger {
+  background: rgba(213, 82, 42, 0.1);
+  color: var(--a-accent);
+  border: 1px solid rgba(213, 82, 42, 0.2);
+}
+.admin-root .a-btn-danger:hover { background: rgba(213, 82, 42, 0.18); }
+
+/* ── CARD ── */
+.admin-root .a-card {
+  background: var(--a-surface);
+  border: 1px solid var(--a-border);
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+/* ── BADGE ── */
+.admin-root .a-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+.admin-root .a-badge-green  { background: rgba(90,138,106,0.12); color: var(--a-green); }
+.admin-root .a-badge-orange { background: rgba(196,149,106,0.15); color: var(--a-clay-deep); }
+.admin-root .a-badge-red    { background: rgba(213,82,42,0.1); color: var(--a-accent); }
+.admin-root .a-badge-blue   { background: rgba(74,106,138,0.12); color: var(--a-blue); }
+
+/* ── INPUT ── */
+.admin-root .a-input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--a-bg);
+  border: 1px solid var(--a-border);
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  color: var(--a-ink);
+  outline: none;
+  transition: border-color 0.18s;
+}
+.admin-root .a-input:focus { border-color: var(--a-clay); }
+
+/* ── TABLE ── */
+.admin-root .a-table { width: 100%; border-collapse: collapse; }
+.admin-root .a-table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--a-ink-light);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--a-border);
+  font-weight: 500;
+}
+.admin-root .a-table td {
+  padding: 0.9rem 1rem;
+  font-size: 0.85rem;
+  color: var(--a-ink-mid);
+  border-bottom: 1px solid var(--a-border);
+  vertical-align: middle;
+}
+.admin-root .a-table tr:last-child td { border-bottom: none; }
+.admin-root .a-table tbody tr:hover { background: var(--a-bg); }
+
+/* ── GLOBAL RESPONSIVE HELPERS ── */
+@media (max-width: 768px) {
+  .admin-root .a-card {
+    padding: 1rem;
+  }
+
+  .admin-root .a-title {
+    font-size: 1.3rem;
+  }
+
+  .admin-root .a-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .admin-root .a-table th,
+  .admin-root .a-table td {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

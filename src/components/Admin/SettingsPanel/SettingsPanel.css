@@ -1,0 +1,92 @@
+.settings { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.settings__header { margin-bottom: 0.25rem; }
+
+.settings__section { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.settings__section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--a-ink);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--a-border);
+}
+
+.settings__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.settings__grid--3 { grid-template-columns: repeat(3, 1fr); }
+
+.settings__field { display: flex; flex-direction: column; gap: 0.4rem; }
+.settings__field .a-label { margin-bottom: 0; }
+.settings__field--full { grid-column: 1 / -1; }
+
+.settings__footer {
+  display: flex; align-items: center; justify-content: flex-end; gap: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--a-border);
+}
+
+.settings__saved { font-size: 0.8rem; color: var(--a-sage); }
+.settings__error { font-size: 0.78rem; color: var(--a-accent); }
+
+/* INFO GRID */
+.settings__info-grid { display: flex; flex-direction: column; }
+
+.settings__info-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--a-border);
+}
+.settings__info-row:last-child { border-bottom: none; }
+
+.settings__info-label { font-size: 0.82rem; color: var(--a-ink-mid); }
+
+.settings__info-val {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--a-ink);
+  background: var(--a-bg);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid var(--a-border);
+}
+
+.settings__note {
+  font-size: 0.75rem;
+  color: var(--a-ink-light);
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .settings__grid,
+  .settings__grid--3 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .settings__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .settings__info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .settings__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .settings__footer .a-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

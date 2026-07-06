@@ -1,0 +1,411 @@
+/* ══════════════════════════════════════════
+   SHARED SHEET STYLES
+   All 4 official BYWA document components
+   ══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── OUTER WRAPPER ── */
+.sheet { display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* ── TOPBAR ── */
+
+.sheet__topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.sheet__topbar-actions { display: flex; gap: 0.75rem; align-items: center; }
+
+/* ── DOCUMENT CARD ── */
+.sheet__doc {
+  background: #fff;
+  border: 1px solid var(--a-border);
+  border-radius: 6px;
+  padding: 2.5rem 2.75rem;
+  box-shadow: 0 2px 16px rgba(42,36,32,0.06);
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── ORG HEADER ── */
+.sheet__org-header {
+  text-align: center;
+  border-bottom: 2px solid var(--a-ink);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sheet__org-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--a-ink);
+  text-transform: uppercase;
+}
+
+.sheet__org-reg {
+  font-size: 0.7rem;
+  color: var(--a-ink-mid);
+  margin-top: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.sheet__org-addr {
+  font-size: 0.68rem;
+  color: var(--a-ink-mid);
+  margin-top: 0.15rem;
+}
+
+/* ── DOCUMENT TITLE ── */
+.sheet__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--a-ink);
+  text-decoration: underline;
+  margin-bottom: 1.5rem;
+}
+
+.sheet__subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: underline;
+  color: var(--a-ink);
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── META FIELDS ── */
+.sheet__meta { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+
+.sheet__meta-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.sheet__meta-field {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+}
+.sheet__meta-field--wide { flex: 2; }
+.sheet__meta-field--sm   { flex: 0.6; min-width: 100px; }
+
+.sheet__meta-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--a-ink);
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sheet__meta-input {
+  flex: 1;
+  border: none;
+  border-bottom: 1px dotted var(--a-ink);
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: var(--a-ink);
+  background: transparent;
+  padding: 0.15rem 0.25rem;
+  min-width: 60px;
+  transition: border-color 0.15s;
+}
+.sheet__meta-input:focus { border-bottom-color: var(--a-clay); border-bottom-style: solid; }
+.sheet__meta-input--sm { max-width: 120px; }
+
+/* ── TABLE ── */
+.sheet__table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+
+.sheet__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+}
+
+.sheet__table th,
+.sheet__table td {
+  border: 1px solid var(--a-ink);
+  padding: 0.25rem 0.3rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.3;
+}
+
+.sheet__table th {
+  background: var(--a-sand, #F5F0E8);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--a-ink);
+}
+
+.sheet__th-section {
+  background: rgba(196,149,106,0.15) !important;
+  color: var(--a-clay-deep) !important;
+}
+.sheet__th-champ {
+  background: rgba(122,140,116,0.15) !important;
+  color: var(--a-sage) !important;
+}
+
+.sheet__max {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--a-ink-light);
+  font-weight: 400;
+}
+
+/* Row inputs */
+.sheet__cell-input {
+  width: 100%;
+  min-width: 36px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--a-ink);
+  padding: 0.15rem;
+}
+.sheet__cell-input:focus { background: rgba(196,149,106,0.07); border-radius: 2px; }
+.sheet__cell-input--sm  { min-width: 28px; max-width: 44px; }
+.sheet__cell-input--total { font-weight: 700; color: var(--a-clay-deep); min-width: 40px; }
+.sheet__cell-input--name { text-align: left; min-width: 120px; }
+.sheet__cell-input--pos  { font-weight: 700; color: var(--a-clay); }
+
+/* Position labels in result sheet */
+.sheet__pos-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--a-ink-mid);
+  white-space: nowrap;
+}
+
+/* ── ADD ROW BUTTON ── */
+.sheet__add-row {
+  margin-bottom: 1.5rem;
+  font-size: 0.75rem !important;
+}
+
+.sheet__del { padding: 0.2rem 0.5rem !important; font-size: 0.65rem !important; }
+
+/* ── FOOTER ── */
+.sheet__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(42,36,32,0.15);
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.sheet__footer-left { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+
+.sheet__footer-sig { text-align: center; }
+.sheet__sig-line {
+  width: 240px;
+  border-bottom: 1px solid var(--a-ink);
+  margin-bottom: 0.4rem;
+}
+.sheet__sig-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--a-ink);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Judges name list */
+.sheet__judges-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.sheet__judge-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.sheet__judge-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--a-clay);
+  width: 16px;
+  flex-shrink: 0;
+}
+.sheet__judge-line {
+  flex: 1;
+  border-bottom: 1px solid var(--a-ink);
+  min-width: 180px;
+}
+.sheet__judge-input {
+  flex: 1;
+  border: none;
+  border-bottom: 1px solid var(--a-ink);
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--a-ink);
+  background: transparent;
+  padding: 0.1rem 0.25rem;
+  min-width: 180px;
+}
+.sheet__judge-input:focus { border-bottom-color: var(--a-clay); }
+
+/* ── PRINT STYLES ── */
+@media print {
+  .no-print { display: none !important; }
+
+  .sheet__doc {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  .sheet__topbar,
+  .sheet__topbar-actions,
+  .js-topbar,
+  .js-mode-bar,
+  .js-add-bar,
+  .js-add-row-bar,
+  .js-chip {
+    display: none !important;
+  }
+
+  .sheet__cell-input,
+  .sheet__meta-input,
+  .sheet__judge-input {
+    border-color: transparent;
+  }
+
+  .sheet__table th,
+  .sheet__table td {
+    border-color: #000;
+  }
+}
+/* ── Add-row / add-column bar ─────────────────────────── */
+.sheet__add-row-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px;
+  margin-top: 2px;
+  border-top: 1px dashed #bbb;
+  margin-bottom: 16px;
+}
+
+.sheet__add-row-label {
+  font-size: 11px;
+  color: #888;
+  margin-right: auto;
+  font-style: italic;
+}
+
+.sheet__add-btn {
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #fff;
+  border: 1.5px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  letter-spacing: 0.02em;
+}
+
+.sheet__add-btn:hover {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  .sheet__topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .sheet__topbar-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .sheet__doc {
+    padding: 1.5rem;
+  }
+
+  .sheet__org-name {
+    font-size: 1.2rem;
+  }
+
+  .sheet__title {
+    font-size: 1.1rem;
+  }
+
+  .sheet__meta-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .sheet__meta-field {
+    width: 100%;
+  }
+
+  .sheet__meta-field--wide,
+  .sheet__meta-field--sm {
+    flex: 1;
+    min-width: 100%;
+  }
+
+  .sheet__table-wrap {
+    overflow-x: auto;
+  }
+
+  .sheet__table {
+    font-size: 0.65rem;
+    min-width: 600px;
+  }
+
+  .sheet__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sheet__footer-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sheet__sig-line {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .sheet__judges-list {
+    width: 100%;
+  }
+
+  .sheet__add-row-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sheet__add-row-label {
+    margin-right: 0;
+  }
+}

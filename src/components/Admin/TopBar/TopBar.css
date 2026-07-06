@@ -1,0 +1,207 @@
+.topbar {
+  height: var(--a-topbar-h);
+  background: var(--a-surface);
+  border-bottom: 1px solid var(--a-border);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0 1.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  flex-shrink: 0;
+}
+
+/* BREADCRUMB */
+.topbar__left { flex-shrink: 0; }
+.topbar__breadcrumb { display: flex; align-items: center; gap: 0.4rem; }
+.topbar__breadcrumb-root { font-size: 0.76rem; color: var(--a-ink-light); }
+.topbar__breadcrumb-sep  { font-size: 0.76rem; color: var(--a-border-strong); }
+.topbar__breadcrumb-page { font-size: 0.8rem; font-weight: 500; color: var(--a-ink); }
+
+/* SEARCH */
+.topbar__center { flex: 1; max-width: 380px; margin: 0 auto; }
+
+.topbar__search {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--a-bg);
+  border: 1px solid var(--a-border);
+  border-radius: 6px;
+  padding: 0.42rem 0.75rem;
+  transition: border-color 0.18s;
+}
+.topbar__search:focus-within { border-color: var(--a-clay); }
+.topbar__search-icon { color: var(--a-ink-light); flex-shrink: 0; }
+
+.topbar__search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--a-ink);
+}
+.topbar__search-input::placeholder { color: var(--a-ink-light); }
+
+.topbar__search-kbd {
+  font-size: 0.6rem;
+  color: var(--a-ink-light);
+  background: var(--a-surface);
+  border: 1px solid var(--a-border);
+  border-radius: 3px;
+  padding: 0.1rem 0.35rem;
+  flex-shrink: 0;
+}
+
+/* RIGHT */
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* ROLE BADGE */
+.topbar__role-badge {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+}
+.topbar__role-badge--admin {
+  background: rgba(42, 36, 32, 0.08);
+  color: var(--a-ink);
+}
+.topbar__role-badge--judge {
+  background: rgba(122, 140, 116, 0.15);
+  color: var(--a-sage);
+}
+
+.topbar__divider {
+  width: 1px; height: 22px;
+  background: var(--a-border);
+}
+
+/* PROFILE */
+.topbar__profile {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  cursor: default;
+}
+
+.topbar__avatar {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: white;
+}
+.topbar__avatar--admin { background: var(--a-ink); }
+.topbar__avatar--judge { background: var(--a-sage); }
+
+.topbar__profile-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--a-ink);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.topbar__profile-role {
+  font-size: 0.6rem;
+  color: var(--a-ink-light);
+  white-space: nowrap;
+}
+
+/* LOGOUT */
+.topbar__logout {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  background: none;
+  border: 1px solid var(--a-border);
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  color: var(--a-ink-mid);
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.topbar__logout:hover {
+  border-color: rgba(212, 82, 42, 0.4);
+  color: #D4522A;
+  background: rgba(212, 82, 42, 0.05);
+}
+
+/* Mobile menu button */
+.topbar__menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--a-ink);
+  padding: 0.4rem;
+  border-radius: 4px;
+  transition: background 0.18s;
+}
+
+.topbar__menu-btn:hover {
+  background: var(--a-bg);
+}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 0 1rem;
+  }
+
+  .topbar__menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .topbar__left {
+    display: none;
+  }
+
+  .topbar__center {
+    display: none;
+  }
+
+  .topbar__right {
+    gap: 0.5rem;
+  }
+
+  .topbar__role-badge {
+    display: none;
+  }
+
+  .topbar__divider {
+    display: none;
+  }
+
+  .topbar__profile-name,
+  .topbar__profile-role {
+    display: none;
+  }
+
+  .topbar__logout {
+    padding: 0.45rem 0.6rem;
+  }
+
+  .topbar__logout span {
+    display: none;
+  }
+}

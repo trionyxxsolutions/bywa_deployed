@@ -1,0 +1,115 @@
+.dashboard { display: flex; flex-direction: column; gap: 1.75rem; }
+
+.dashboard__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+/* STATS */
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.dashboard__stat-card { padding: 1.5rem !important; }
+
+.dashboard__stat-label { margin-bottom: 0.75rem; }
+
+.dashboard__stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard__stat-card--clay .dashboard__stat-value { color: var(--a-clay); }
+.dashboard__stat-card--sage .dashboard__stat-value { color: var(--a-sage); }
+.dashboard__stat-card--blue .dashboard__stat-value { color: var(--a-blue); }
+.dashboard__stat-card--red  .dashboard__stat-value { color: var(--a-accent); }
+
+.dashboard__stat-delta {
+  font-size: 0.75rem;
+  color: var(--a-ink-light);
+}
+
+/* GRID */
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.dashboard__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard__link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.78rem;
+  color: var(--a-clay);
+  font-family: 'DM Sans', sans-serif;
+  padding: 0;
+}
+.dashboard__link:hover { text-decoration: underline; }
+
+/* ACTIVITY */
+.dashboard__activity { list-style: none; margin-top: 1rem; }
+
+.dashboard__activity-item {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--a-border);
+}
+.dashboard__activity-item:last-child { border-bottom: none; }
+
+.dashboard__activity-icon {
+  width: 32px; height: 32px;
+  background: var(--a-bg);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.dashboard__activity-action {
+  font-size: 0.82rem;
+  color: var(--a-ink);
+  line-height: 1.4;
+  margin-bottom: 0.2rem;
+}
+
+.dashboard__activity-time {
+  font-size: 0.72rem;
+  color: var(--a-ink-light);
+}
+
+@media (max-width: 1100px) {
+  .dashboard__stats { grid-template-columns: repeat(2, 1fr); }
+  .dashboard__grid  { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .dashboard__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .dashboard__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__stat-value {
+    font-size: 2rem;
+  }
+}

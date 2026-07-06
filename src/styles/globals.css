@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --sand: #F5F0E8;
+  --sand-dark: #EDE6D6;
+  --clay: #C4956A;
+  --clay-deep: #9B6A3F;
+  --sage: #7A8C74;
+  --sage-light: #B8C8B2;
+  --ink: #2A2420;
+  --ink-mid: #5C4F47;
+  --ink-light: #9A8F87;
+  --white: #FDFAF6;
+  --accent: #D4522A;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--clay);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--clay);
+}
+
+.btn-primary {
+  padding: 0.9rem 2.2rem;
+  background: var(--ink);
+  color: var(--white);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--clay); }
+
+.btn-ghost {
+  padding: 0.9rem 2.2rem;
+  background: transparent;
+  color: var(--ink-mid);
+  border: 1px solid rgba(90,70,60,0.3);
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--clay); color: var(--clay); }
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }

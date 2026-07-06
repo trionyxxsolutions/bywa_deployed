@@ -1,0 +1,36 @@
+.marquee {
+  background: var(--clay);
+  padding: 0.9rem 0;
+  overflow: hidden;
+}
+
+.marquee__inner {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+  width: max-content;
+  animation: marquee-scroll 80s linear infinite;
+}
+
+.marquee__inner span {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+.marquee__dot {
+  opacity: 0.4;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
